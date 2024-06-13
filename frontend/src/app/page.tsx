@@ -52,6 +52,20 @@ export default async function Home() {
           { "id": 2, "name": "Player 2", "points": 650, "assists": 270, "rebounds": 370 },
           { "id": 3, "name": "Player 3", "points": 600, "assists": 250, "rebounds": 350 }
         ]
+      },
+      {
+        "id": 4,
+        "name": "2022-2023",
+        "games": [
+          { "id": 1, "date": "2022-10-10", "opponent": "Team P", "result": "W" },
+          { "id": 2, "date": "2022-10-15", "opponent": "Team Q", "result": "L" },
+          { "id": 3, "date": "2022-10-20", "opponent": "Team R", "result": "W" }
+        ],
+        "players": [
+          { "id": 1, "name": "Player 1", "points": 700, "assists": 300, "rebounds": 400 },
+          { "id": 2, "name": "Player 2", "points": 650, "assists": 270, "rebounds": 370 },
+          { "id": 3, "name": "Player 3", "points": 600, "assists": 250, "rebounds": 350 }
+        ]
       }
     ]
   }
