@@ -16,14 +16,14 @@ const playersData: Player[] = [
 ];
 
 type GamePageProps = {
-  id: string;
-  gameId: string;
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 };
 
-export default function GamePage({ id, gameId }: GamePageProps) {
+export default function GamePage({ params, searchParams }: GamePageProps) {
   // Find the game data based on the gameId
   // For now, just display static data
-  const game = { id: gameId, date: '2020-10-10', opponent: 'Team A', result: 'W' };
+  const game = { id: 1, date: '2020-10-10', opponent: 'Team A', result: 'W' };
   const players = playersData; // Assuming all players participated in this game
 
   return (
@@ -54,7 +54,7 @@ export default function GamePage({ id, gameId }: GamePageProps) {
         </table>
       </div>
 
-      <Link href={`/season/${id}`} className="mt-4 text-blue-500">
+      <Link href={`/season/${1}`} className="mt-4 text-blue-500">
         Go back to season
       </Link>
     </div>

@@ -1,9 +1,24 @@
 // app/page.tsx
-import { promises as fs } from 'fs';
+type Game = {
+  id: number;
+  date: string;
+  opponent: string;
+  result: string;
+};
+
+type Player = {
+  id: number;
+  name: string;
+  points: number;
+  assists: number;
+  rebounds: number;
+};
 
 type Season = {
   id: number;
   name: string;
+  games: Game[];
+  players: Player[];
 };
 
 export default async function Home() {
@@ -72,13 +87,11 @@ export default async function Home() {
   `
   const seasons = JSON.parse(file);
 
-  console.log("something"+ seasons)
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
       <h1 className="text-4xl font-semibold mb-8 text-gray-800">Yabangan League Seasons</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
-        {seasons['seasons'].map((season) => (
+        {seasons['seasons'].map((season: Season) => (
           <a
             key={season.id}
             href={`/season/${season.id}`}
